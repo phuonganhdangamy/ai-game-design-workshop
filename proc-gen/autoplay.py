@@ -19,19 +19,17 @@ def solve(game: Game) -> Tuple[bool, int]:
     def visit(x: int, y: int):
         def visitNeighbour(nx: int, ny: int, d: Direction):
             if nx >= 0 and nx < game.height and ny >= 0 and ny < game.width and ((nx, ny) not in visited) and game.grid[nx][ny] != 'W':
-                print(d)
-                game.playMove(d)
+                game.playMove(d, render=False)
 
                 # check for tree or monster
                 if game.grid[nx][ny] == 'M':
                     for _ in range(5):
-                        game.playMove(d)
+                        game.playMove(d, render=False)
                 elif game.grid[nx][ny] == 'T':
-                    game.playMove(d)
+                    game.playMove(d, render=False)
 
                 visit(nx, ny)
-                print(oppositeOf(d))
-                game.playMove(oppositeOf(d))
+                game.playMove(oppositeOf(d), render=False)
 
         visited.append((x, y))
 

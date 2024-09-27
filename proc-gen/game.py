@@ -19,6 +19,9 @@ class Game:
     def __init__(self, width: int, height: int, monsterProbability: float, treeProbability: float, wallProbability: float):
         self.width = width
         self.height = height
+        self.monsterProbability = monsterProbability
+        self.treeProbability = treeProbability
+        self.wallProbability = wallProbability
         self.grid = [[' ' for _ in range(width)] for _ in range(height)]
 
         self.grid[0][0] = 'P'

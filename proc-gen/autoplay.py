@@ -46,6 +46,7 @@ def solve(game: Game) -> Tuple[bool, int]:
     return ((game.height - 1, game.width - 1) in visited, game.movesPlayed)
 
 
-game = Game(3, 3, 0.1, 0.1, 0.3)
-game.renderBoard()
-print(solve(game))
+if __name__ == "__main__":
+    game = Game(3, 3, 0.1, 0.1, 0.3)
+    game.renderBoard()
+    print(solve(game))
